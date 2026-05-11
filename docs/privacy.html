@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — OwnMind</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080d1e; --bg2: #0f1630; --purple: #6B5CE7; --purple-l: #9A8CF8;
+      --teal: #00D4AA; --white: #ffffff; --muted: #8B8BA8; --border: rgba(255,255,255,0.08);
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+           background: var(--bg); color: var(--white); line-height: 1.75; }
+    a { color: var(--purple-l); }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px; border-bottom: 1px solid var(--border);
+      background: rgba(8,13,30,0.85); backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; text-decoration: none; color: #fff; }
+    .nav-logo .dot { width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, #7B6CF7, #5A4BD6); display: grid; place-items: center; font-size: 14px; }
+
+    .container { max-width: 740px; margin: 0 auto; padding: 64px 24px 100px; }
+
+    .page-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      color: var(--teal); text-transform: uppercase; margin-bottom: 12px; }
+    h1 { font-size: 40px; font-weight: 800; letter-spacing: -.8px; margin-bottom: 8px; }
+    .updated { font-size: 13px; color: var(--muted); margin-bottom: 48px; }
+
+    .summary-box {
+      background: rgba(0,212,170,0.06); border: 1px solid rgba(0,212,170,0.2);
+      border-radius: 16px; padding: 24px 28px; margin-bottom: 48px;
+    }
+    .summary-box h2 { font-size: 15px; font-weight: 700; color: var(--teal); margin-bottom: 12px; }
+    .summary-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .summary-box li { font-size: 14px; color: #ccc; display: flex; gap: 10px; }
+    .summary-box li::before { content: "✓"; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+
+    section { margin-bottom: 44px; }
+    h2 { font-size: 20px; font-weight: 700; margin-bottom: 14px;
+         padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    p { font-size: 15px; color: #c8c8d8; margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    ul li { font-size: 15px; color: #c8c8d8; margin-bottom: 6px; }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 48px;
+             display: flex; justify-content: space-between; align-items: center;
+             font-size: 13px; color: var(--muted); gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); }
+    @media (max-width: 600px) { nav { padding: 16px 20px; } footer { padding: 24px 20px; flex-direction: column; text-align: center; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="dot">🧠</div>
+    OwnMind
+  </a>
+  <a href="support.html" style="font-size:14px; color:#8B8BA8;">Support</a>
+</nav>
+
+<div class="container">
+  <div class="page-label">Legal</div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: May 2025 &nbsp;·&nbsp; Effective immediately</p>
+
+  <div class="summary-box">
+    <h2>🛡️ The short version</h2>
+    <ul>
+      <li>All your data stays on your Mac. We never see it.</li>
+      <li>Nothing is sent to the cloud, ever.</li>
+      <li>Everything is encrypted with AES-256-GCM on-device.</li>
+      <li>We don't sell, share, or monetise your data.</li>
+      <li>You can export or delete everything at any time.</li>
+    </ul>
+  </div>
+
+  <section>
+    <h2>1. Who we are</h2>
+    <p>OwnMind is developed and published by <strong>Astro Labs</strong>. If you have any privacy questions, contact us at <a href="mailto:sushanth.reddy.21042004@gmail.com">sushanth.reddy.21042004@gmail.com</a>.</p>
+  </section>
+
+  <section>
+    <h2>2. What OwnMind captures</h2>
+    <p>To provide its core functionality, OwnMind records your on-device activity including:</p>
+    <ul>
+      <li>The title of the active window and application name</li>
+      <li>URLs of web pages viewed in supported browsers (Safari, Chrome, Firefox)</li>
+      <li>Time spent in each application</li>
+      <li>Document titles and file names of active documents</li>
+    </ul>
+    <p>This data is captured locally using macOS Accessibility APIs (AXUIElement) after you explicitly grant Accessibility permission in System Settings. OwnMind only reads what is currently visible on screen — it does not take screenshots or access file contents.</p>
+  </section>
+
+  <section>
+    <h2>3. How your data is stored</h2>
+    <p>All captured data is stored exclusively in a local SQLite database on your Mac, inside your application support directory. The database is encrypted at rest using <strong>AES-256-GCM</strong> with a key stored in your macOS Keychain — a key only your Mac and your account can access.</p>
+    <p>No data is ever transmitted to Astro Labs' servers or any third-party server. OwnMind operates in full App Sandbox mode with no outbound network permissions.</p>
+  </section>
+
+  <section>
+    <h2>4. AI features (on-device only)</h2>
+    <p>OwnMind's AI summarisation and tagging features use <strong>Apple Foundation Models</strong>, which run entirely on your device. Your data is never sent to Apple or any external AI provider for these features. All inference happens locally.</p>
+  </section>
+
+  <section>
+    <h2>5. Permissions we request</h2>
+    <ul>
+      <li><strong>Accessibility (AXUIElement)</strong> — required to read the active window title and URL. Granted by you in System Settings → Privacy & Security → Accessibility. You can revoke this at any time.</li>
+    </ul>
+    <p>OwnMind does not request camera, microphone, location, contacts, or any other system permissions beyond Accessibility.</p>
+  </section>
+
+  <section>
+    <h2>6. Subscriptions & payments</h2>
+    <p>OwnMind offers optional Pro subscriptions managed entirely by Apple through the Mac App Store. Astro Labs never receives your payment details, credit card information, or billing address. All billing is handled by Apple under their privacy policy.</p>
+  </section>
+
+  <section>
+    <h2>7. Data sharing</h2>
+    <p>We do not share, sell, rent, or disclose your personal data to any third party — because we never have access to it in the first place. Your data lives only on your device.</p>
+  </section>
+
+  <section>
+    <h2>8. Your rights & data control</h2>
+    <p>You have full control over your data at all times:</p>
+    <ul>
+      <li><strong>Pause capture</strong> — stop recording at any time from the menu bar</li>
+      <li><strong>Export</strong> — export all your memories to JSON, CSV, or Markdown</li>
+      <li><strong>Delete</strong> — delete individual items or your entire history from within the app</li>
+      <li><strong>Uninstall</strong> — removing OwnMind removes the app; you can manually delete the database from ~/Library/Application Support/OwnMind/</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>9. Children's privacy</h2>
+    <p>OwnMind is not directed at children under the age of 13 and we do not knowingly collect data from children. Since all data remains on-device and is never transmitted to us, we have no mechanism to collect such data regardless.</p>
+  </section>
+
+  <section>
+    <h2>10. Changes to this policy</h2>
+    <p>If we make material changes to this Privacy Policy, we will update the "Last updated" date above. Continued use of OwnMind after changes constitutes acceptance of the revised policy.</p>
+  </section>
+
+  <section>
+    <h2>11. Contact</h2>
+    <p>Questions or concerns? We're happy to help:<br/>
+    📧 <a href="mailto:sushanth.reddy.21042004@gmail.com">sushanth.reddy.21042004@gmail.com</a></p>
+  </section>
+</div>
+
+<footer>
+  <span>© 2025 Astro Labs · OwnMind</span>
+  <div style="display:flex; gap:20px;">
+    <a href="index.html">Home</a>
+    <a href="support.html">Support</a>
+    <a href="mailto:sushanth.reddy.21042004@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
