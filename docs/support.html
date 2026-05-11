@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — OwnMind</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #080d1e; --bg2: #0f1630; --purple: #6B5CE7; --purple-l: #9A8CF8;
+      --teal: #00D4AA; --white: #ffffff; --muted: #8B8BA8; --border: rgba(255,255,255,0.08);
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+           background: var(--bg); color: var(--white); line-height: 1.7; }
+    a { color: var(--purple-l); }
+
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px; border-bottom: 1px solid var(--border);
+      background: rgba(8,13,30,0.85); backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; text-decoration: none; color: #fff; }
+    .nav-logo .dot { width: 28px; height: 28px; border-radius: 8px;
+      background: linear-gradient(135deg, #7B6CF7, #5A4BD6); display: grid; place-items: center; font-size: 14px; }
+
+    .container { max-width: 760px; margin: 0 auto; padding: 64px 24px 100px; }
+
+    .page-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      color: var(--purple-l); text-transform: uppercase; margin-bottom: 12px; }
+    h1 { font-size: 40px; font-weight: 800; letter-spacing: -.8px; margin-bottom: 10px; }
+    .subtitle { font-size: 16px; color: var(--muted); margin-bottom: 52px; }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(107,92,231,0.12), rgba(0,212,170,0.06));
+      border: 1px solid rgba(107,92,231,0.3); border-radius: 20px;
+      padding: 36px 40px; margin-bottom: 64px; display: flex;
+      align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .contact-card h2 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .contact-card p { font-size: 14px; color: var(--muted); }
+    .btn-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #8070FF, #5A4BD6);
+      color: #fff; padding: 12px 24px; border-radius: 10px;
+      font-size: 14px; font-weight: 600; text-decoration: none; white-space: nowrap;
+    }
+    .btn-email:hover { opacity: .85; }
+
+    /* FAQ */
+    .faq-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      color: var(--teal); text-transform: uppercase; margin-bottom: 20px; }
+    .faq-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 60px; }
+    details {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    details + details { border-top: none; border-radius: 0; }
+    details:first-child { border-radius: 12px 12px 0 0; }
+    details:last-child  { border-radius: 0 0 12px 12px; }
+    details:only-child  { border-radius: 12px; }
+    summary {
+      padding: 18px 20px; font-size: 15px; font-weight: 600;
+      cursor: pointer; list-style: none; display: flex;
+      justify-content: space-between; align-items: center; gap: 12px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; font-size: 20px; color: var(--muted); flex-shrink: 0; transition: transform .2s; }
+    details[open] summary::after { content: "−"; }
+    .faq-body { padding: 0 20px 18px; font-size: 14px; color: #c0c0d0; }
+    .faq-body p { margin-bottom: 10px; }
+    .faq-body p:last-child { margin-bottom: 0; }
+    .faq-body code {
+      background: rgba(255,255,255,0.06); padding: 2px 7px;
+      border-radius: 5px; font-family: monospace; font-size: 13px;
+    }
+
+    /* STEPS */
+    .steps { counter-reset: step; display: flex; flex-direction: column; gap: 10px; }
+    .step { display: flex; gap: 14px; align-items: flex-start; }
+    .step-num {
+      counter-increment: step;
+      width: 26px; height: 26px; border-radius: 50%;
+      background: rgba(107,92,231,0.2); border: 1px solid var(--purple);
+      display: grid; place-items: center; font-size: 12px; font-weight: 700;
+      color: var(--purple-l); flex-shrink: 0; margin-top: 2px;
+    }
+    .step-num::before { content: counter(step); }
+
+    footer { border-top: 1px solid var(--border); padding: 32px 48px;
+             display: flex; justify-content: space-between; align-items: center;
+             font-size: 13px; color: var(--muted); gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); }
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .contact-card { flex-direction: column; padding: 28px 24px; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="dot">🧠</div>
+    OwnMind
+  </a>
+  <a href="privacy.html" style="font-size:14px; color:#8B8BA8;">Privacy Policy</a>
+</nav>
+
+<div class="container">
+  <div class="page-label">Help Center</div>
+  <h1>Support</h1>
+  <p class="subtitle">We're here to help. Most answers are below — if not, just email us.</p>
+
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <div>
+      <h2>📬 Get in touch</h2>
+      <p>Email us and we'll get back to you within 24 hours.</p>
+    </div>
+    <a href="mailto:sushanth.reddy.21042004@gmail.com" class="btn-email">
+      ✉️ &nbsp;Email Support
+    </a>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-label">Frequently Asked Questions</div>
+
+  <div class="faq-list">
+
+    <details>
+      <summary>OwnMind doesn't appear to be capturing anything. What's wrong?</summary>
+      <div class="faq-body">
+        <p>OwnMind requires Accessibility permission to read your active windows and URLs. Without it, capturing is disabled.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num"></div><div>Open <strong>System Settings</strong> on your Mac</div></div>
+          <div class="step"><div class="step-num"></div><div>Go to <strong>Privacy & Security → Accessibility</strong></div></div>
+          <div class="step"><div class="step-num"></div><div>Find <strong>OwnMind</strong> in the list and toggle it <strong>on</strong></div></div>
+          <div class="step"><div class="step-num"></div><div>Restart OwnMind and click <strong>Resume</strong> in the menu bar</div></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>The popover doesn't appear when I'm in a full-screen app</summary>
+      <div class="faq-body">
+        <p>Make sure you're running the latest version of OwnMind. Versions 1.1 and later use a floating panel that appears over full-screen apps. Update via the Mac App Store.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Where is my data stored?</summary>
+      <div class="faq-body">
+        <p>All data is stored locally in an encrypted database at:</p>
+        <p><code>~/Library/Application Support/OwnMind/</code></p>
+        <p>It is encrypted with AES-256-GCM and never leaves your Mac. See our <a href="privacy.html">Privacy Policy</a> for full details.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Howdo I pause or stop OwnMind from capturing?</summary>
+      <div class="faq-body">
+        <p>Click the OwnMind icon in your menu bar and tap <strong>Pause</strong>. Capturing will stop immediately. The icon will show a red dot while paused. Tap <strong>Resume</strong> to start again.</p>
+        <p>To stop permanently, you can also quit OwnMind using the power button in the menu bar popover.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>How do I cancel my subscription?</summary>
+      <div class="faq-body">
+        <p>Subscriptions are managed by Apple. To cancel:</p>
+        <div class="steps">
+          <div class="step"><div class="step-num"></div><div>Open <strong>System Settings</strong></div></div>
+          <div class="step"><div class="step-num"></div><div>Click your <strong>Apple ID</strong> at the top</div></div>
+          <div class="step"><div class="step-num"></div><div>Go to <strong>Subscriptions</strong></div></div>
+          <div class="step"><div class="step-num"></div><div>Find <strong>OwnMind</strong> and tap <strong>Cancel Subscription</strong></div></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Howdo I export or delete my data?</summary>
+      <div class="faq-body">
+        <p>Open OwnMind → click <strong>Open OwnMind</strong> in the menu bar popover → go to <strong>Settings</strong>. From there you can export your entire history (JSON, CSV, MarKdown) or delete all data permanently.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>OwnMind is using a lot of CPU. What should I do?</summary>
+      <div class="faq-body">
+        <p>OwnMind is designed to be lightweight. High CPU usage is unusual. Try:</p>
+        <div class="steps">
+          <div class="step"><div class="step-num"></div><div>Quit and relaunch OwnMind</div></div>
+          <div class="step"><div class="step-num"></div><div>Check for and install any pending Mac App Store updates</div></div>
+          <div class="step"><div class="step-num"></div><div>If the issue persists, email us with your macOS version and OwnMind version</div></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Does OwnMind work on Apple Silicon (M1/M2/M3/M4)?</summary>
+      <div class="faq-body">
+        <p>Yes — OwnMind is built as a native Universal binary and runs natively on both Apple Silicon and Intel Macs.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>What macOS version is required?</summary>
+      <div class="faq-body">
+        <p>OwnMind requires <strong>macOS 14 Sonoma</strong> or later. AI features (summaries and tags) require macOS 15 Sequoia or later with Apple Intelligence enabled.</p>
+      </div>
+    </details>
+
+  </div>
+
+  <!-- STILL NEED HELP -->
+  <div style="background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 32px; text-align: center;">
+    <div style="font-size: 28px; margin-bottom: 12px;">🤔<div>
+    <h2 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Still need help?</h2>
+    <p style="font-size: 14px; color: var(--muted); margin-bottom: 20px;">We read every email and reply within 24 hours.</p>
+    <a href="mailto:sushanth.reddy.21042004@gmail.com" class="btn-email" style="display:inline-flex;">
+      ✉️ &nbsp;sushanth.reddy.21042004@gmail.com
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2025 Astro Labs · OwnMind</span>
+  <div style="display:flex; gap:20px;">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="mailto:sushanth.reddy.21042004@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
